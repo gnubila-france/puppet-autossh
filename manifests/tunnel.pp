@@ -96,7 +96,7 @@ define autossh::tunnel(
     group   => $user,
     content => template('autossh/autossh.conf.erb'),
   }
-  if ($tunnel_type == 'forward') {
+  if ($pubkey != '') {
     file {"/home/${user}/.ssh/id_rsa_${tun_name}":
       ensure  => file,
       owner   => $user,
