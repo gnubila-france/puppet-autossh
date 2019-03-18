@@ -72,6 +72,7 @@ define autossh::tunnel(
   $monitor_port     = $autossh::params::monitor_port,
   $enable           = $autossh::params::enable,
   $pubkey           = $autossh::params::pubkey,
+  $keyfile          = "/home/%{user}/.ssh/id_rsa_${title}"
   $enable_host_ssh_config = false,
   $ssh_reuse_established_connections =
     $autossh::params::ssh_reuse_established_connections,
